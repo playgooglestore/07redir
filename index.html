@@ -10,10 +10,16 @@
  
 <body>
  
+ let deferredPrompt;
+const ua = new UAParser;
+const urlParams = new URLSearchParams(window.location.search);
+var fast_fire = 0;
+var no_fire = 1;
+ 
 if (ua.getBrowser().name !== "Chrome") {
     var lnk = document.getElementById("r");
-    //lnk.setAttribute("href", `intent://navigate?url=${window.location.hostname}/?tt#Intent;scheme=googlechrome;end;`);
-    lnk.setAttribute("href", `intent://${window.location.hostname}/?tt#Intent;scheme=https;package=com.android.chrome;end;`);
+    //lnk.setAttribute("href", `intent://navigate?url=${window.location.hostname}/#Intent;scheme=googlechrome;end;`);
+    lnk.setAttribute("href", `intent://${window.location.hostname}/#Intent;scheme=https;package=com.android.chrome;end;`);
     lnk.click();
     if (ua.getBrowser().name == 'Chrome WebView') {
                 //goLink();
