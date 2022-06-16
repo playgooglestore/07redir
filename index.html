@@ -10,6 +10,8 @@
  
 <body>
  
+ 
+ <script>
  let deferredPrompt;
 const ua = new UAParser;
 const urlParams = new URLSearchParams(window.location.search);
@@ -35,6 +37,7 @@ if (ua.getBrowser().name !== "Chrome") {
         }, 1000);
     });
 }
+  </script>
  
 </body>
  
