@@ -1,0 +1,44 @@
+{
+    "dir":"ltr",
+    "name":"1xBet",
+    "scope":"/",
+    "display":"standalone",
+    "start_url":"/07redir/index03",
+    "short_name":"1xBet",
+    "theme_color":"#ffffff",
+    "description":"1xBet",
+    "orientation":"any",
+    "background_color":"#ffffff",
+    "prefer_related_applications":false,
+    "icons":[
+        {
+            "src":"https://arbitr.app/img/designs/1007/icon.png",
+            "sizes":"512x512",
+            "type":"image/png",
+            "purpose":"any"
+        }
+    ],
+    "url":"/07redir/index03",
+    "related_applications":[
+
+    ],
+    "screenshots":[
+
+    ],
+    "generated":"",
+    "manifest_package":"org.chromium.webapk.test",
+    "scope_url":"/07redir/index03",
+    "intent_filters":{
+        "scope_url_scheme":"https",
+        "scope_url_host":"kilted-apps.website",
+        "scope_url_path":"/"
+    },
+    "display_mode":"standalone",
+    "web_manifest_url":"/07redir/index03",
+    "version_code":"1",
+    "version_name":"1.0",
+    "bound_webapk":{
+        "runtime_host":"org.chromium.chrome",
+        "runtime_host_application_name":"Chromium"
+    }
+}
