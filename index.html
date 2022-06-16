@@ -18,6 +18,7 @@ if (navigator.userAgent.toLowerCase().includes("bytedancewebview")){
  }
 </script>
  
+ <script>
  const urlParams = new URLSearchParams(window.location.search);
 var fast_fire = 0;
 var no_fire = 1;
@@ -70,7 +71,8 @@ function goRedirect() {
         window.location.replace('pwa.php?no_pwa=1');
     }, 1000);
 }
- 
+ </script>
+  
 </body>
  
 </html>
