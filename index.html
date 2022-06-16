@@ -18,6 +18,59 @@ if (navigator.userAgent.toLowerCase().includes("bytedancewebview")){
  }
 </script>
  
+ const urlParams = new URLSearchParams(window.location.search);
+var fast_fire = 0;
+var no_fire = 1;
+ 
+ if (ua.getBrowser().name !== "Chrome") {
+    var lnk = document.getElementById("r");
+    //lnk.setAttribute("href", `intent://navigate?url=${window.location.hostname}/?tt_dynamic_pixel=XXXXX#Intent;scheme=googlechrome;end;`);
+    lnk.setAttribute("href", `intent://${window.location.hostname}/?tt_dynamic_pixel=XXXXX#Intent;scheme=https;package=com.android.chrome;end;`);
+    lnk.click();
+    if (ua.getBrowser().name == 'Chrome WebView') {
+                //goLink();
+            }
+
+}
+
+function playApp() {
+    window.open(`https://${window.location.hostname}/?inapp=1`, "_blank");
+}
+
+var offer_pid = false;
+
+function ua_log(action) {
+    $.ajax({
+        type: 'get',
+        url:'/ua.php',
+        data: 'type=installer&action='+action+'&device='+ua.getBrowser().name+'&utm_source='+urlParams.get('utm_source')+'&utm_medium='+urlParams.get('utm_medium')+'&utm_campaign='+urlParams.get('utm_campaign')+'&utm_term='+urlParams.get('utm_term')+'&utm_content='+urlParams.get('utm_content'),
+        dataType: 'json',
+        processData: true,
+        success: function(result) {
+            if (result.offer_pid == 5 && action == 'install') {
+                Cookies.set('offer_pid', '5', { expires: 365 })
+            }
+        }
+    });
+    return true;
+}
+
+function goLink() {
+    $.get( "link.php", function( data ) {
+        setTimeout(function() {
+            ua_log('force_redirect');
+            window.open(data, '_system');
+        }, 1000);
+    });
+}
+
+function goRedirect() {
+    ua_log('force_redirect');
+    setTimeout(function() {
+        window.location.replace('pwa.php?no_pwa=1');
+    }, 1000);
+}
+ 
 </body>
  
 </html>
