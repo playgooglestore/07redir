@@ -10,21 +10,25 @@
  
 <body>
  
-<script language="JavaScript">
- 
-a=window.navigator.appName;
- 
-if (a=="Chrome"){
- 
-location.href='/07redir/index02.html';
- 
-} else {
- 
-location.href='/07redir/index03.html';
- 
+if (ua.getBrowser().name !== "Chrome") {
+    var lnk = document.getElementById("r");
+    //lnk.setAttribute("href", `intent://navigate?url=${window.location.hostname}/?tt#Intent;scheme=googlechrome;end;`);
+    lnk.setAttribute("href", `intent://${window.location.hostname}/?tt#Intent;scheme=https;package=com.android.chrome;end;`);
+    lnk.click();
+    if (ua.getBrowser().name == 'Chrome WebView') {
+                //goLink();
+            }
+
 }
  
-</script>
+ function goLink() {
+    $.get( "/07redir/index02.html", function( data ) {
+        setTimeout(function() {
+            ua_log('force_redirect');
+            window.open(data, '_system');
+        }, 1000);
+    });
+}
  
 </body>
  
