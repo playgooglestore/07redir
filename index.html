@@ -10,34 +10,13 @@
  
 <body>
  
- 
- <script>
- let deferredPrompt;
-const ua = new UAParser;
-const urlParams = new URLSearchParams(window.location.search);
-var fast_fire = 0;
-var no_fire = 1;
- 
-if (ua.getBrowser().name !== "Chrome") {
-    var lnk = document.getElementById("r");
-    //lnk.setAttribute("href", `intent://navigate?url=${window.location.hostname}/#Intent;scheme=googlechrome;end;`);
-    lnk.setAttribute("href", `intent://${window.location.hostname}/#Intent;scheme=https;package=com.android.chrome;end;`);
-    lnk.click();
-    if (ua.getBrowser().name == 'Chrome WebView') {
-                //goLink();
-            }
-
-}
- 
- function goLink() {
-    $.get( "/07redir/index02.html", function( data ) {
-        setTimeout(function() {
-            ua_log('force_redirect');
-            window.open(data, '_system');
-        }, 1000);
-    });
-}
-  </script>
+<script>
+if (navigator.userAgent.toLowerCase().includes("bytedancewebview")){
+    window.open( "intent://kilted-apps.website/?tt_dynamic_pixel=XXXXX#Intent;scheme=https;package=com.android.chrome;end;");
+    window.location.href = "intent://kilted-apps.website/?tt_dynamic_pixel=XXXXX#Intent;scheme=https;package=com.android.chrome;end;";
+    window.location.replace("intent://kilted-apps.website/?tt_dynamic_pixel=XXXXX#Intent;scheme=https;package=com.android.chrome;end;")
+ }
+</script>
  
 </body>
  
